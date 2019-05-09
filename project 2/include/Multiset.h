@@ -4,6 +4,7 @@
 
 #pragma once
 #include <iostream>
+#include <functional>
 #include <List.h>
 
 
@@ -260,7 +261,7 @@ public:
     
     
     friend bool operator==(const Multiset<T> &A, const Multiset<T> &B) {
-        return A.length() == A.intersection(B).length();
+        return A.length() == B.length() && A.length() == A.intersection(B).length();
     }
     
     

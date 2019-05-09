@@ -52,7 +52,8 @@ void TestMultiset::primitiveTypeRemoveTest() {
 void TestMultiset::primitiveTypeDoesExistTest() {
     Multiset<int> A = {{ 1, 3 }, { 2, 3 }, { 3, 3 }};
 
-    check(A.doesExist(2) && !A.doesExist(10), "doesExist() for primitive type");
+    check(A.doesExist(2), "doesExist() for primitive type #1");
+    check(!A.doesExist(10), "doesExist() for primitive type #2");
 }
 
 
@@ -60,7 +61,9 @@ void TestMultiset::primitiveTypeDoesExistTest() {
 void TestMultiset::primitiveTypeMultiplicityTest() {
     Multiset<int> A = {{ 1, 2 }, { 2, 3 }, { 3, 4 }};
     
-    check(A.multiplicityOf(1) == 2 && A.multiplicityOf(3) == 4 && A.multiplicityOf(10) == 0, "multiplicityOf() for primitive type");
+    check(A.multiplicityOf(1) == 2, "multiplicityOf() for primitive type #1");
+    check(A.multiplicityOf(3) == 4, "multiplicityOf() for primitive type #2");
+    check(A.multiplicityOf(10) == 0, "multiplicityOf() for primitive type #3");
 }
 
 
@@ -71,7 +74,8 @@ void TestMultiset::primitiveTypeSizeTest() {
      
     B.removeAll(1).removeAll(2).removeAll(3).removeAll(10);
 
-    check(A.length() == 9 && B.length() == 0, "length() for primitive type");
+    check(A.length() == 9, "length() for primitive type #1");
+    check(B.length() == 0, "length() for primitive type #2");
 }
 
 
@@ -103,7 +107,8 @@ void TestMultiset::primitiveTypeComparisonTest() {
     Multiset<int> B = {{ 1 }, { 2, 3 }, { 3, 3 }};
     Multiset<int> C = { 1, 2, 3 };
     
-    check(A == B && A != C, "comparison for primitive type");
+    check(A == B, "comparison for primitive type #1");
+    check(A != C, "comparison for primitive type #2");
 }
 
 
@@ -158,7 +163,8 @@ void TestMultiset::complexTypeDoesExistTest() {
         {{ 1, 1, 1 }, 3 }
     };
     
-    check(A.doesExist({ 1, 2, 3 }) && !A.doesExist({ 1, 2, 3.1 }), "doesExist() for complex type");
+    check(A.doesExist({ 1, 2, 3 }), "doesExist() for complex type #1");
+    check(!A.doesExist({ 1, 2, 3.1 }), "doesExist() for complex type #2");
 }
 
 
@@ -169,9 +175,9 @@ void TestMultiset::complexTypeMultiplicityTest() {
         {{ 1, 1, 1 }, 3 }
     };
     
-    check(A.multiplicityOf({ 1, 1, 1 }) == 3 && 
-            A.multiplicityOf({ 1, 2, 3 }) == 2 && 
-            A.multiplicityOf({ 3, 2, 1 }) == 0, "multiplicityOf() for complex type");
+    check(A.multiplicityOf({ 1, 1, 1 }) == 3, "multiplicityOf() for complex type #1"); 
+    check(A.multiplicityOf({ 1, 2, 3 }) == 2, "multiplicityOf() for complex type #2");
+    check(A.multiplicityOf({ 3, 2, 1 }) == 0, "multiplicityOf() for complex type #3");
 }
 
 
@@ -185,7 +191,8 @@ void TestMultiset::complexTypeSizeTest() {
     
     B.removeAll({ 1, 2, 3 }).remove({ 1, 1, 1 }).remove({ 1222, 1553, 1745 });
     
-    check(A.length() == 6 && B.length() == 2, "length() for complex type");
+    check(A.length() == 6, "length() for complex type #1");
+    check(B.length() == 2, "length() for complex type #2");
 }
 
 
@@ -224,7 +231,8 @@ void TestMultiset::complexTypeComparisonTest() {
     B.append({ 1, 2, 3 }, 2).append({ 10, 10, 10 });
     Multiset<Vector3D> C = {{ 1, 2, 3 }, { 1, 2, 3.111 }, { 10, 10, 10 }};
     
-    check(A == B && A != C, "comparison for complex type");
+    check(A == B, "comparison for complex type #1");
+    check(A != C, "comparison for complex type #2");
 }
 
 
