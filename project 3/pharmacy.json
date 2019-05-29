@@ -1,0 +1,520 @@
+{
+    "simulation": {
+        "ticks per second": 3,
+        "time": 500,
+        "log file": "logs",
+        "probability of new client per tick": 0.05,
+        "max medicines per customer": 5,
+        "delivery interval": 240
+    },
+
+    "pharmacy": {
+        "number of employees": 2,
+        "number of windows": 2,
+        "number of each medicine at start": 1,
+        "number of medicines to order": 2,
+        "money at start": 0.0,
+        "profit margin": 0.05,
+        "queue size to open new window": 3
+    },
+
+    "medicine groups": {
+        "A": "przewód pokarmowy i metabolizm",
+        "B": "krew i układ krwiotwórczy",
+        "C": "układ sercowo-naczyniowy",
+        "D": "dermatologia",
+        "G": "układ moczowo-płciowy i hormony płciowe",
+        "H": "hormony",
+        "J": "leki przeciwinfekcyjne stosowane ogólnie",
+        "L": "leki przeciwnowotworowe i immunomodulujące", 
+        "M": "układ mięśniowo-szkieletowy",
+        "N": "układ nerwowy",
+        "P": "leki przeciwpasożytnicze",
+        "R": "układ oddechowy",
+        "S": "narządy zmysłów",
+        "V": "inne"
+    },
+
+    "medicines": [
+        {
+            "name": "Metronidazol Polpharma",
+            "group": "A",
+            "price": 43.49,
+            "prescription": true
+        },
+        {
+            "name": "Alumag",
+            "group": "A",
+            "price": 8.99,
+            "prescription": false
+        },
+        {
+            "name": "Espumisan",
+            "group": "A",
+            "price": 15.99,
+            "prescription": false
+        },
+        {
+            "name": "Buscopan",
+            "group": "A",
+            "price": 12.99,
+            "prescription": false
+        },
+        {
+            "name": "Cholestil",
+            "group": "A",
+            "price": 29.51,
+            "prescription": true
+        },
+        {
+            "name": "Mannitol 15% Baxter",
+            "group": "A",
+            "price": 17.04,
+            "prescription": true
+        },
+        {
+            "name": "Węgiel leczniczy",
+            "group": "A",
+            "price": 10.99,
+            "prescription": false
+        },
+        {
+            "name": "Xenical",
+            "group": "A",
+            "price": 368.99,
+            "prescription": true
+        },
+        {
+            "name": "Lacidar Laktaza",
+            "group": "A",
+            "price": 15.46,
+            "prescription": false
+        },
+        {
+            "name": "Pioglitazone Bioton",
+            "group": "A",
+            "price": 27.99,
+            "prescription": true
+        },
+        {
+            "name": "Vitaminum A + E",
+            "group": "A",
+            "price": 7.99,
+            "prescription": false
+        },
+        {
+            "name": "Magne-B6",
+            "group": "A",
+            "price": 13.99,
+            "prescription": false
+        },
+        {
+            "name": "Lecytyna Avet",
+            "group": "A",
+            "price": 8.99,
+            "prescription": false
+        }, 
+        {
+            "name": "DHEA Eljot",
+            "group": "A",
+            "price": 39.99,
+            "prescription": false
+        },
+        {
+            "name": "Efient",
+            "group": "B",
+            "price": 281.83,
+            "prescription": true
+        },
+        {
+            "name": "TachoSil",
+            "group": "B",
+            "price": 787.03,
+            "prescription": true
+        }, 
+        {
+            "name": "Ascofer",
+            "group": "B",
+            "price": 7.99,
+            "prescription": false
+        }, 
+        {
+            "name": "Alburex 20",
+            "group": "B",
+            "price": 174.24,
+            "prescription": true
+        },
+        {
+            "name": "Firazyr",
+            "group": "B",
+            "price": 7237.18,
+            "prescription": true
+        },
+        {
+            "name": "Efrinol 2%",
+            "group": "C",
+            "price": 7.88,
+            "prescription": true
+        },
+        {
+            "name": "Hytrin",
+            "group": "C",
+            "price": 33.39,
+            "prescription": true
+        }, 
+        {
+            "name": "Inspra",
+            "group": "C",
+            "price": 88.99,
+            "prescription": true
+        }, 
+        {
+            "name": "Normatens",
+            "group": "C",
+            "price": 17.49,
+            "prescription": true
+        },
+        {
+            "name": "Cyclovena",
+            "group": "C",
+            "price": 12.99,
+            "prescription": false
+        }, 
+        {
+            "name": "Visken",
+            "group": "C",
+            "price": 14.87,
+            "prescription": true
+        }, 
+        {
+            "name": "Plendil",
+            "group": "C",
+            "price": 12.47,
+            "prescription": true
+        },
+        {
+            "name": "Tanatril",
+            "group": "C",
+            "price": 8.96,
+            "prescription": true
+        }, 
+        {
+            "name": "Omega-3",
+            "group": "C",
+            "price": 13.49,
+            "prescription": false
+        },
+        {
+            "name": "Daktarin",
+            "group": "D",
+            "price": 19.50,
+            "prescription": false
+        },
+        {
+            "name": "Cynk",
+            "group": "D",
+            "price": 5.99,
+            "prescription": false
+        },
+        {
+            "name": "Kwas hialuronowy",
+            "group": "D",
+            "price": 69.00,
+            "prescription": false
+        },
+        {
+            "name": "Trachisan",
+            "group": "D",
+            "price": 19.00,
+            "prescription": false
+        },
+        {
+            "name": "Oxsoralen",
+            "group": "D",
+            "price": 17.56,
+            "prescription": true
+        },
+        {
+            "name": "Vratizolin",
+            "group": "D",
+            "price": 24.49,
+            "prescription": false
+        },
+        {
+            "name": "Elosone",
+            "group": "D",
+            "price": 11.27,
+            "prescription": true
+        },
+        {
+            "name": "Nitrofurazon",
+            "group": "D",
+            "price": 6.07,
+            "prescription": false
+        },
+        {
+            "name": "Izotek",
+            "group": "D",
+            "price": 126.30,
+            "prescription": true
+        },
+        {
+            "name": "Protopic",
+            "group": "D",
+            "price": 55.88,
+            "prescription": true
+        },
+        {
+            "name": "Nystatyna Teva",
+            "group": "G",
+            "price": 18.99,
+            "prescription": true
+        },
+        {
+            "name": "Dostinex",
+            "group": "G",
+            "price": 98.50,
+            "prescription": true
+        },
+        {
+            "name": "Androtop",
+            "group": "G",
+            "price": 238.82,
+            "prescription": true
+        },
+        {
+            "name": "Cialis",
+            "group": "G",
+            "price": 135.50,
+            "prescription": true
+        },
+        {
+            "name": "Cetrotide",
+            "group": "H",
+            "price": 127.46,
+            "prescription": true
+        },
+        {
+            "name": "Hydrocortisonum Jelfa",
+            "group": "H",
+            "price": 15.27,
+            "prescription": true
+        },
+        {
+            "name": "Kelp",
+            "group": "H",
+            "price": 24.49,
+            "prescription": false
+        },
+        {
+            "name": "GlucaGen",
+            "group": "H",
+            "price": 64.34,
+            "prescription": true
+        },
+        {
+            "name": "Paricalcitol Teva",
+            "group": "H",
+            "price": 47.29,
+            "prescription": true
+        },
+        {
+            "name": "Doxycyclinum TZF",
+            "group": "J",
+            "price": 10.23,
+            "prescription": true
+        },
+        {
+            "name": "Vfend",
+            "group": "J",
+            "price": 1150.10,
+            "prescription": true
+        },
+        {
+            "name": "Ethambutol Teva",
+            "group": "J",
+            "price": 90.57,
+            "prescription": true
+        },
+        {
+            "name": "Norvir",
+            "group": "J",
+            "price": 247.29,
+            "prescription": true
+        },
+        {
+            "name": "Synagis",
+            "group": "J",
+            "price": 2052.42,
+            "prescription": true
+        },
+        {
+            "name": "Lanvis",
+            "group": "L",
+            "price": 741.88,
+            "prescription": true
+        },
+        {
+            "name": "Glandex",
+            "group": "L",
+            "price": 75.16,
+            "prescription": true
+        },
+        {
+            "name": "Neupogen",
+            "group": "L",
+            "price": 137.44,
+            "prescription": true
+        },
+        {
+            "name": "Leflunomide medac",
+            "group": "L",
+            "price": 60.50,
+            "prescription": true
+        },
+        {
+            "name": "Naproxen Polfarmex",
+            "group": "M",
+            "price": 11.65,
+            "prescription": true
+        },
+        {
+            "name": "Ibuprom",
+            "group": "M",
+            "price": 7.27,
+            "prescription": false
+        },
+        {
+            "name": "Baclofen Polpharma",
+            "group": "M",
+            "price": 12.24,
+            "prescription": true
+        },
+        {
+            "name": "Milurit",
+            "group": "M",
+            "price": 8.52,
+            "prescription": true
+        },
+        {
+            "name": "Bonviva",
+            "group": "M",
+            "price": 43.49,
+            "prescription": true
+        },
+        {
+            "name": "Synvisc",
+            "group": "M",
+            "price": 690.00,
+            "prescription": false
+        },
+        {
+            "name": "Apap",
+            "group": "N",
+            "price": 7.05,
+            "prescription": false
+        },
+        {
+            "name": "Mizodin",
+            "group": "N",
+            "price": 21.04,
+            "prescription": true
+        },
+        {
+            "name": "Bromergon",
+            "group": "N",
+            "price": 19.06,
+            "prescription": true
+        },
+        {
+            "name": "Klozapol",
+            "group": "N",
+            "price": 32.65,
+            "prescription": true
+        },
+        {
+            "name": "Zoloft",
+            "group": "N",
+            "price": 31.52,
+            "prescription": true
+        },
+        {
+            "name": "Betaserc",
+            "group": "N",
+            "price": 38.99,
+            "prescription": true
+        },
+        {
+            "name": "Zentel",
+            "group": "P",
+            "price": 15.71,
+            "prescription": true
+        },
+        {
+            "name": "Crotamiton",
+            "group": "P",
+            "price": 12.99,
+            "prescription": true
+        },
+        {
+            "name": "Starazolin",
+            "group": "R",
+            "price": 15.00,
+            "prescription": false
+        },
+        {
+            "name": "Otinum",
+            "group": "R",
+            "price": 24.76,
+            "prescription": false
+        },
+        {
+            "name": "Theovent 100",
+            "group": "R",
+            "price": 9.09,
+            "prescription": true
+        },
+        {
+            "name": "Ambroksol Takeda",
+            "group": "R",
+            "price": 7.99,
+            "prescription": false
+        },
+        {
+            "name": "Loratadyna Galena",
+            "group": "R",
+            "price": 12.30,
+            "prescription": true
+        },
+        {
+            "name": "Dermopanten",
+            "group": "S",
+            "price": 11.30,
+            "prescription": false
+        },
+        {
+            "name": "Cortineff",
+            "group": "S",
+            "price": 15.99,
+            "prescription": true
+        },
+        {
+            "name": "Softacort",
+            "group": "S",
+            "price": 42.49,
+            "prescription": true
+        },
+        {
+            "name": "Purethal",
+            "group": "V",
+            "price": 243.34,
+            "prescription": true
+        },
+        {
+            "name": "Acetylcysteine Sandoz",
+            "group": "V",
+            "price": 24.09,
+            "prescription": true
+        }
+    ]
+}
