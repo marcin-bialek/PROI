@@ -67,7 +67,7 @@ void JsonParser::skipWhitespaces() {
 auto JsonParser::parseValue() -> std::shared_ptr<Json::Value> {
     if(currentChar() == '"')
         return parseString();
-    else if(isnumber(currentChar()) || currentChar() == '-')
+    else if(isdigit(currentChar()) || currentChar() == '-')
         return parseInteger();
     else if(currentChar() == '{')
         return parseObject();
@@ -114,7 +114,7 @@ auto JsonParser::parseInteger() -> std::shared_ptr<Json::Value> {
         mul = -1;
     }
     
-    while(isnumber(currentChar())) {
+    while(isdigit(currentChar())) {
         value = value * 10 + currentChar() - '0';
         next();
     }
@@ -131,7 +131,7 @@ auto JsonParser::parseInteger() -> std::shared_ptr<Json::Value> {
 auto JsonParser::parseFraction(int intPart) -> std::shared_ptr<Json::Double> {
     double value = intPart;
     
-    for(uintmax_t decimalPlaces = 1; isnumber(currentChar()); decimalPlaces++) {
+    for(uintmax_t decimalPlaces = 1; isdigit(currentChar()); decimalPlaces++) {
         value += (currentChar() - '0') / pow(10, decimalPlaces);
         next();
     }
@@ -145,27 +145,27 @@ auto JsonParser::parseObject() -> std::shared_ptr<Json::Object> {
     if(!test("{"))
         throw Expected("{", context.line);
         
+    skipWhitespaces();
+    auto object = std::make_shared<Json::Object>();
+    
+    while(currentChar() == '"') {
+        auto key = parseString()->getValue();
         skipWhitespaces();
-        auto object = std::make_shared<Json::Object>();
         
-        while(currentChar() == '"') {
-            auto key = parseString()->getValue();
-            skipWhitespaces();
-            
-            if(!test(":")) {
-                throw Expected(":", context.line);
-            }
-                
-            skipWhitespaces();
-            object->set(key, parseValue());
-            skipWhitespaces();
-            
-            if(!test(",")) {
-                break;
-            }
-            
-            skipWhitespaces();
+        if(!test(":")) {
+            throw Expected(":", context.line);
         }
+            
+        skipWhitespaces();
+        object->set(key, parseValue());
+        skipWhitespaces();
+        
+        if(!test(",")) {
+            break;
+        }
+        
+        skipWhitespaces();
+    }
     
     if(!test("}")) {
         throw Expected("}", context.line);
@@ -180,19 +180,19 @@ auto JsonParser::parseArray() -> std::shared_ptr<Json::Array> {
     if(!test("["))
         throw Expected("[", context.line);
         
+    skipWhitespaces();
+    auto array = std::make_shared<Json::Array>();
+    
+    while(!test("]")) {
+        array->append(parseValue());
         skipWhitespaces();
-        auto array = std::make_shared<Json::Array>();
         
-        while(!test("]")) {
-            array->append(parseValue());
-            skipWhitespaces();
-            
-            if(!test(",")) {
-                break;
-            }
-            
-            skipWhitespaces();
+        if(!test(",")) {
+            break;
         }
+        
+        skipWhitespaces();
+    }
     
     if(!test("]")) {
         throw Expected("]", context.line);

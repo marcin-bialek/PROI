@@ -150,7 +150,7 @@ auto Json::stringToIndex(std::string str) const -> uintmax_t {
     uintmax_t index = 0;
     
     for(const char c : str) {
-        if(isnumber(c)) {
+        if(isdigit(c)) {
             index = index * 10 + c - '0';
         }
         

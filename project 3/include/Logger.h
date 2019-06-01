@@ -3,7 +3,9 @@
 
 
 #pragma once
+#include <condition_variable>
 #include <fstream>
+#include <mutex>
 #include <string>
 #include <thread>
 #include <queue>
